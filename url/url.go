@@ -1,7 +1,7 @@
 package url
 
 import (
-	"github.com/agitanurfd/Pemrograman-III/controller"
+	"github.com/agitanurfd/agitanurfd/controller"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/websocket/v2"
 )
@@ -11,4 +11,10 @@ func Web(page *fiber.App) {
 	page.Get("/ws/whatsauth/qr", websocket.New(controller.WsWhatsAuthQR)) //websocket whatsauth
 	page.Get("/", controller.Homepage) //ujicoba panggil package musik
 	page.Get("/presensi", controller.GetPresensi)
+	page.Get("/tamu", controller.GetAllUndanganRapatFromNamaTamu)
+	page.Get("/jabatan", controller.GetAllTamuFromJabatan)
+	page.Get("/jamrapat", controller.GetAllJamRapatFromDurasi)
+	page.Get("/jurusan", controller.GetAllUniversitasFromJurusan)
+	page.Get("/ruangan", controller.GetAllRuanganFromNoRuangan)
+	page.Get("/insundangan", controller.InsertUndanganRapat)
 }

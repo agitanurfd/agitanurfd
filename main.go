@@ -3,14 +3,14 @@ package main
 import (
 	"log"
 
-	"github.com/agitanurfd/Pemrograman-III/config"
+	"github.com/agitanurfd/agitanurfd/config"
 
 	"github.com/aiteung/musik"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 
 	"github.com/whatsauth/whatsauth"
 
-	"github.com/agitanurfd/Pemrograman-III/url"
+	"github.com/agitanurfd/agitanurfd/url"
 
 	"github.com/gofiber/fiber/v2"
 )

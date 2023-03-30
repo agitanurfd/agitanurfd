@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"github.com/agitanurfd/Pemrograman-III/config"
+	"github.com/agitanurfd/agitanurfd/config"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/websocket/v2"
