@@ -17,4 +17,6 @@ func Web(page *fiber.App) {
 	page.Get("/jurusan", controller.GetAllUniversitasFromJurusan)
 	page.Get("/ruangan", controller.GetAllRuanganFromNoRuangan)
 	page.Get("/insundangan", controller.InsertUndanganRapat)
+	page.Get("/presensi", controller.GetAllPresensi) //menampilkan seluruh data presensi
+	page.Get("/presensi/:id", controller.GetPresensiID) //menampilkan data presensi berdasarkan id
 }
