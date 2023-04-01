@@ -9,6 +9,7 @@ import (
 	inimodel "github.com/agitanurfd/undanganRapat/model"
 	inimodule "github.com/agitanurfd/undanganRapat/module"
 	inimodullatihan "github.com/indrariksa/be_presensi/module"
+	// inimodultugas "github.com/agitanurfd/undanganRapat/module"
 	"github.com/agitanurfd/agitanurfd/config"
 	"github.com/aiteung/musik"
 	cek "github.com/aiteung/presensi"
@@ -120,3 +121,39 @@ func GetPresensiID(c *fiber.Ctx) error {
 	}
 	return c.JSON(ps)
 }
+
+func GetAllUndanganRapatFromID(c *fiber.Ctx) error {
+	ps := inimodule.GetUndanganRapatFromNamaTamu(config.Ulbimongoconn, "Jaemin", "undanganrapat")
+	return c.JSON(ps)
+}
+// func GetTamuFromJabatan(c *fiber.Ctx) error {
+// 	id := c.Params("id")
+// 	if id == "" {
+// 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+// 			"status":  http.StatusInternalServerError,
+// 			"message": "Wrong parameter",
+// 		})
+// 	}
+// 	// objID, err := primitive.ObjectIDFromHex(id)
+// 	// if err != nil {
+// 	// 	return c.Status(http.StatusBadRequest).JSON(fiber.Map{
+// 	// 		"status":  http.StatusBadRequest,
+// 	// 		"message": "Invalid id parameter",
+// 	// 	})
+// 	// }
+// 	ps, err := inimodule.GetTamuFromJabatan(config.Ulbimongoconn, "tamu")
+// 	if err != nil {
+// 		if errors.Is(err, mongo.ErrNoDocuments) {
+// 			return c.Status(http.StatusNotFound).JSON(fiber.Map{
+// 				"status":  http.StatusNotFound,
+// 				"message": fmt.Sprintf("No data found for id %s", id),
+// 			})
+// 		}
+// 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+// 			"status":  http.StatusInternalServerError,
+// 			"message": fmt.Sprintf("Error retrieving data for id %s", id),
+// 		})
+// 	}
+// 	return c.JSON(ps)
+// }
+
