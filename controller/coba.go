@@ -122,7 +122,7 @@ func GetPresensiID(c *fiber.Ctx) error {
 	return c.JSON(ps)
 }
 
-func GetAllUndanganRapatFromID(c *fiber.Ctx) error {
+func GetAllUndanganRapatFromTamu(c *fiber.Ctx) error {
 	ps := inimodule.GetUndanganRapatFromNamaTamu(config.Ulbimongoconn, "Jaemin", "undanganrapat")
 	return c.JSON(ps)
 }
