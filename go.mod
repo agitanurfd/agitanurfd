@@ -3,7 +3,7 @@ module github.com/agitanurfd/agitanurfd
 go 1.20
 
 require (
-	github.com/agitanurfd/undanganRapat v0.0.1
+	github.com/agitanurfd/undanganRapat v0.0.3
 	github.com/aiteung/atdb v0.0.9
 	github.com/aiteung/musik v0.0.5
 	github.com/aiteung/presensi v0.0.34

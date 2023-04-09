@@ -122,10 +122,15 @@ func GetPresensiID(c *fiber.Ctx) error {
 	return c.JSON(ps)
 }
 
-func GetAllUndanganRapatFromTamu(c *fiber.Ctx) error {
-	ps := inimodule.GetUndanganRapatFromNamaTamu(config.Ulbimongoconn, "Jaemin", "undanganrapat")
+func GetAll(c *fiber.Ctx) error {
+	ps := inimodule.GetAllUndanganRapat(config.Ulbimongoconn, "undanganrapat")
 	return c.JSON(ps)
 }
+
+// func GetAllUndanganRapatFromTamu(c *fiber.Ctx) error {
+// 	ps := inimodule.GetUndanganRapatFromNamaTamu(config.Ulbimongoconn, "Jaemin", "undanganrapat")
+// 	return c.JSON(ps)
+// }
 
 // func GetTamuFromJabatan(c *fiber.Ctx) error {
 // 	id := c.Params("id")
