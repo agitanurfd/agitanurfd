@@ -127,6 +127,29 @@ func GetAll(c *fiber.Ctx) error {
 	return c.JSON(ps)
 }
 
+func GetAllJamRapat(c *fiber.Ctx) error {
+	ps := inimodule.GetAllJamRapat(config.Ulbimongoconn, "jamrapat")
+	return c.JSON(ps)
+}
+func GetAllTamu(c *fiber.Ctx) error {
+	ps := inimodule.GetAllTamu(config.Ulbimongoconn, "tamu")
+	return c.JSON(ps)
+}
+func GetAllRuangan(c *fiber.Ctx) error {
+	ps := inimodule.GetAllRuangan(config.Ulbimongoconn, "ruangan")
+	return c.JSON(ps)
+}
+func GetAllLokasi(c *fiber.Ctx) error {
+	ps := inimodule.GetAllLokasi(config.Ulbimongoconn, "lokasi")
+	return c.JSON(ps)
+}
+func GetAllUniversitas(c *fiber.Ctx) error {
+	ps := inimodule.GetAllUniversitas(config.Ulbimongoconn, "universitas")
+	return c.JSON(ps)
+}
+
+
+
 // func GetAllUndanganRapatFromTamu(c *fiber.Ctx) error {
 // 	ps := inimodule.GetUndanganRapatFromNamaTamu(config.Ulbimongoconn, "Jaemin", "undanganrapat")
 // 	return c.JSON(ps)
