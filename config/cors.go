@@ -17,13 +17,14 @@ var origins = []string{
 	"https://iteung.ulbi.ac.id",
 	"https://whatsauth.github.io",
 	"https://agitanurfd.github.io",
+	"https://127.0.0.1:5500",
 }
 
 var Internalhost string = os.Getenv("INTERNALHOST") + ":" + os.Getenv("PORT")
 
 var Cors = cors.Config{
 	AllowOrigins:     strings.Join(origins[:], ","),
-	AllowMethods:     "GET,HEAD,OPTIONS,POST,PUT",
+	AllowMethods:     "GET,HEAD,OPTIONS,POST,PUT,DELETE",
 	AllowHeaders:     "Origin, X-Requested-With, Content-Type, Accept, Authorization",
 	ExposeHeaders:    "Content-Length",
 	AllowCredentials: true,
