@@ -41,19 +41,25 @@ definitions:
   controller.Presensi:
     properties:
       _id:
+        example: "123456789"
         type: string
       biodata:
         $ref: '#/definitions/controller.Karyawan'
       checkin:
         description: Datetime     primitive.DateTime `bson:"datetime,omitempty" json:"datetime,omitempty"`
+        example: MASUK
         type: string
       latitude:
+        example: 123.11
         type: number
       location:
+        example: Bandung
         type: string
       longitude:
+        example: 123.11
         type: number
       phone_number:
+        example: "08123456789"
         type: string
     type: object
 host: agita.herokuapp.com

@@ -188,26 +188,32 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "_id": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "123456789"
                 },
                 "biodata": {
                     "$ref": "#/definitions/controller.Karyawan"
                 },
                 "checkin": {
                     "description": "Datetime     primitive.DateTime ` + "`" + `bson:\"datetime,omitempty\" json:\"datetime,omitempty\"` + "`" + `",
-                    "type": "string"
+                    "type": "string",
+                    "example": "MASUK"
                 },
                 "latitude": {
-                    "type": "number"
+                    "type": "number",
+                    "example": 123.11
                 },
                 "location": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Bandung"
                 },
                 "longitude": {
-                    "type": "number"
+                    "type": "number",
+                    "example": 123.11
                 },
                 "phone_number": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "08123456789"
                 }
             }
         }
