@@ -1,0 +1,15 @@
+basePath: /
+host: agita.herokuapp.com
+info:
+  contact:
+    email: 1214029@std.ulbi.ac.id
+    name: API Support
+    url: https://github.com/agitanurfd
+  description: This is a sample server
+  title: Swagger Example API
+  version: "1.0"
+paths: {}
+schemes:
+- http
+- https
+swagger: "2.0"
