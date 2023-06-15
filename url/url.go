@@ -17,7 +17,7 @@ func Web(page *fiber.App) {
 	page.Get("/jamrapat", controller.GetAllJamRapatFromDurasi)
 	page.Get("/jurusan", controller.GetAllUniversitasFromJurusan)
 	page.Get("/ruangan", controller.GetAllRuanganFromNoRuangan)
-	page.Post("/insundangan", controller.InsertUndanganRapat)
+	page.Get("/insundangan", controller.InsertUndanganRapat)
 	page.Get("/presensi", controller.GetAllPresensi) //menampilkan seluruh data presensi
 	page.Get("/presensi/:id", controller.GetPresensiID) //menampilkan data presensi berdasarkan id
 	page.Get("/all", controller.GetAll) //menampilkan seluruh data undangan rapat
@@ -27,7 +27,7 @@ func Web(page *fiber.App) {
 	page.Get("/all-ruangan", controller.GetAllRuangan)
 	page.Get("/all-lokasi", controller.GetAllLokasi)
 	page.Post("/ins", controller.InsertData)
-	// page.Post("/insrapat", controller.InsertData)
+	page.Post("/insundangan", controller.InsertDataUndanganRapat)
 	page.Put("/upd/:id", controller.UpdateData)
 	page.Delete("/delete/:id", controller.DeletePresensiByID)
 	page.Get("/docs/*", swagger.HandlerDefault)
