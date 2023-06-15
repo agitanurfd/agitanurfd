@@ -69,12 +69,18 @@ func InsertUndanganRapat(c *fiber.Ctx) error {
 			"message": err.Error(),
 		})
 	}
-	insertedID := inimodule.InsertUndanganRapat(db, "undanganrapat",
+	insertedID, err := inimodule.InsertUndanganRapat(db, "undanganrapat",
 	undanganrapat.Location,
 	undanganrapat.Phone_number,
 	undanganrapat.Biodata,
 	undanganrapat.Prodi,
-)
+	)
+	if err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
 	return c.Status(http.StatusOK).JSON(fiber.Map{
 		"status":      http.StatusOK,
 		"message":     "Data berhasil disimpan.",
@@ -180,7 +186,7 @@ func GetAllUniversitas(c *fiber.Ctx) error {
 // @Failure 400
 // @Failure 500
 // @Router /ins [post]
-func InsertData(c *fiber.Ctx) error {
+func InsertData(c *fiber.Ctx) error { // presensi
 	db := config.Ulbimongoconn
 	var presensi inimodul.Presensi
 	if err := c.BodyParser(&presensi); err != nil {
@@ -209,6 +215,160 @@ func InsertData(c *fiber.Ctx) error {
 	})
 }
 
+func InsertDataUndanganRapat(c *fiber.Ctx) error {
+	db := config.Ulbimongoconn
+	var undanganrapat inimodel.UndanganRapat
+	if err := c.BodyParser(&undanganrapat); err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	insertedID, err := inimodule.InsertUndanganRapat(db, "undanganrapat",
+		undanganrapat.Location,
+		undanganrapat.Phone_number,
+		undanganrapat.Biodata,
+		undanganrapat.Prodi)
+	if err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	return c.Status(http.StatusOK).JSON(fiber.Map{
+		"status":      http.StatusOK,
+		"message":     "Data berhasil disimpan.",
+		"inserted_id": insertedID,
+	})
+}
+
+func InsertDataTamu(c *fiber.Ctx) error {
+	db := config.Ulbimongoconn
+	var tamu inimodel.Tamu
+	if err := c.BodyParser(&tamu); err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	insertedID, err := inimodule.InsertTamu(db, "tamu",
+			tamu.Nama,
+			tamu.Phone_number,
+			tamu.Jabatan,
+			tamu.Jam_kerja,
+			tamu.Hari_kerja)
+	if err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	return c.Status(http.StatusOK).JSON(fiber.Map{
+		"status":      http.StatusOK,
+		"message":     "Data berhasil disimpan.",
+		"inserted_id": insertedID,
+	})
+}
+
+func InsertDataJamRapat(c *fiber.Ctx) error {
+	db := config.Ulbimongoconn
+	var jamrapat inimodel.JamRapat
+	if err := c.BodyParser(&jamrapat); err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	insertedID, err := inimodule.InsertJamRapat(db, "jamrapat",
+			jamrapat.Durasi,
+			jamrapat.Jam_rapat,
+			jamrapat.Hari,
+			jamrapat.Tanggal)
+	if err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	return c.Status(http.StatusOK).JSON(fiber.Map{
+		"status":      http.StatusOK,
+		"message":     "Data berhasil disimpan.",
+		"inserted_id": insertedID,
+	})
+}
+
+func InsertDataUniversitas(c *fiber.Ctx) error {
+	db := config.Ulbimongoconn
+	var universitas inimodel.Universitas
+	if err := c.BodyParser(&universitas); err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	insertedID, err := inimodule.InsertUniversitas(db, "universitas",
+			universitas.Jurusan)
+	if err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	return c.Status(http.StatusOK).JSON(fiber.Map{
+		"status":      http.StatusOK,
+		"message":     "Data berhasil disimpan.",
+		"inserted_id": insertedID,
+	})
+}
+
+func InsertDataLokasi(c *fiber.Ctx) error {
+	db := config.Ulbimongoconn
+	var lokasi inimodel.Lokasi
+	if err := c.BodyParser(&lokasi); err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	insertedID, err := inimodule.InsertLokasi(db, "lokasi",
+			lokasi.Nama,
+			lokasi.Alamat)
+	if err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	return c.Status(http.StatusOK).JSON(fiber.Map{
+		"status":      http.StatusOK,
+		"message":     "Data berhasil disimpan.",
+		"inserted_id": insertedID,
+	})
+}
+
+func InsertDataRuangan(c *fiber.Ctx) error {
+	db := config.Ulbimongoconn
+	var ruangan inimodel.Ruangan
+	if err := c.BodyParser(&ruangan); err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	insertedID, err := inimodule.InsertRuangan(db, "ruangan",
+			ruangan.No_ruangan)
+	if err != nil {
+		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
+			"status":  http.StatusInternalServerError,
+			"message": err.Error(),
+		})
+	}
+	return c.Status(http.StatusOK).JSON(fiber.Map{
+		"status":      http.StatusOK,
+		"message":     "Data berhasil disimpan.",
+		"inserted_id": insertedID,
+	})
+}
 // UpdateData godoc
 // @Summary Update data presensi.
 // @Description Ubah data presensi.

@@ -27,6 +27,7 @@ func Web(page *fiber.App) {
 	page.Get("/all-ruangan", controller.GetAllRuangan)
 	page.Get("/all-lokasi", controller.GetAllLokasi)
 	page.Post("/ins", controller.InsertData)
+	page.Post("/insrapat", controller.InsertData)
 	page.Put("/upd/:id", controller.UpdateData)
 	page.Delete("/delete/:id", controller.DeletePresensiByID)
 	page.Get("/docs/*", swagger.HandlerDefault)

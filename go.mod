@@ -3,13 +3,15 @@ module github.com/agitanurfd/agitanurfd
 go 1.20
 
 require (
-	github.com/agitanurfd/undanganRapat v0.0.5
+	github.com/agitanurfd/undanganRapat v0.0.6
 	github.com/aiteung/atdb v0.0.9
 	github.com/aiteung/musik v0.0.5
 	github.com/aiteung/presensi v0.0.34
 	github.com/gofiber/fiber/v2 v2.46.0
+	github.com/gofiber/swagger v0.1.12
 	github.com/gofiber/websocket/v2 v2.1.5
 	github.com/indrariksa/be_presensi v0.0.12
+	github.com/swaggo/swag v1.16.1
 	github.com/whatsauth/whatsauth v0.1.89
 	go.mongodb.org/mongo-driver v1.11.3
 )
@@ -18,8 +20,6 @@ require (
 	aidanwoods.dev/go-paseto v1.3.0 // indirect
 	filippo.io/edwards25519 v1.0.0 // indirect
 	github.com/KyleBanks/depth v1.2.1 // indirect
-	github.com/PuerkitoBio/purell v1.2.0 // indirect
-	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect
 	github.com/aiteung/atapi v0.0.10 // indirect
 	github.com/aiteung/atmessage v0.0.17 // indirect
 	github.com/aiteung/atmodel v0.0.2 // indirect
@@ -30,7 +30,6 @@ require (
 	github.com/go-openapi/spec v0.20.9 // indirect
 	github.com/go-openapi/swag v0.22.3 // indirect
 	github.com/go-sql-driver/mysql v1.7.0 // indirect
-	github.com/gofiber/swagger v0.1.12 // indirect
 	github.com/golang-sql/civil v0.0.0-20220223132316-b832511892a9 // indirect
 	github.com/golang-sql/sqlexp v0.1.0 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
@@ -51,7 +50,6 @@ require (
 	github.com/savsgio/dictpool v0.0.0-20221023140959-7bf2e61cea94 // indirect
 	github.com/savsgio/gotils v0.0.0-20230208104028-c358bd845dee // indirect
 	github.com/swaggo/files/v2 v2.0.0 // indirect
-	github.com/swaggo/swag v1.16.1 // indirect
 	github.com/tinylib/msgp v1.1.8 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.47.0 // indirect
@@ -64,12 +62,10 @@ require (
 	go.mau.fi/libsignal v0.1.0 // indirect
 	go.mau.fi/whatsmeow v0.0.0-20230316102651-f0c131192076 // indirect
 	golang.org/x/crypto v0.7.0 // indirect
-	golang.org/x/net v0.10.0 // indirect
 	golang.org/x/sync v0.2.0 // indirect
 	golang.org/x/sys v0.8.0 // indirect
 	golang.org/x/text v0.9.0 // indirect
 	golang.org/x/tools v0.9.1 // indirect
 	google.golang.org/protobuf v1.30.0 // indirect
-	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
