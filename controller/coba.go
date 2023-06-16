@@ -225,7 +225,7 @@ func InsertDataUndanganRapat(c *fiber.Ctx) error {
 		})
 	}
 	insertedID, err := inimodule.InsertUndanganRapat(db, "undanganrapat",
-		undanganrapat.Location,
+		undanganrapat.Lokasi,
 		undanganrapat.Phone_number,
 		undanganrapat.Biodata,
 		undanganrapat.Prodi)
